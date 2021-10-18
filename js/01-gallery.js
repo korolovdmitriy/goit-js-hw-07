@@ -32,9 +32,14 @@ function onGalleryClick(event) {
     </div>
 `, {
     onShow: (instance) => {
-        
-       instance.element().querySelector('.js-modal-img').onclick = instance.close
+        document.addEventListener("keydown", event => {
+            if (event.code === 'Escape') { instance.close() };
+});
+       instance.element().querySelector('.js-modal-img').addEventListener("click", () => {
+           instance.close();
+       });
     }
+
 }).show();
 }
 
