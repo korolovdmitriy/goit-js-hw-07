@@ -29,18 +29,20 @@ function onGalleryClick(event) {
   </div>
 `, {
   onShow: (instance) => {
-      window.addEventListener("keydown", onKeyboardClick);
-      function onKeyboardClick (event) {
-        if (event.code === 'Escape') { 
+    window.addEventListener("keydown", onKeyboardClick);
+    function onKeyboardClick(event) {
+      console.log(event.code);
+
+      if (event.code === 'Escape') { 
           instance.close();
-          window.removeEventListener("keydown", onKeyboardClick);
+          window.removeEventListener('keydown', onKeyboardClick);
         };
-      }
+    };
+
       instance.element().querySelector('.js-modal-img').addEventListener("click", () => {
          instance.close();
      });
-  }
-
+    },
 }).show();
 }
 
