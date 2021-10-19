@@ -3,9 +3,8 @@ import { galleryItems } from './gallery-items.js';
 
 const galleryEl = document.querySelector('.gallery');
 
-let galleryItemsString = '';
-galleryItems.forEach(item => {
-    galleryItemsString += `<div class="gallery__item">
+const galleryItemsString = galleryItems.map(item => 
+    `<div class="gallery__item">
   <a class="gallery__link" target="_self" href="${item.original}">
     <img
       class="gallery__image"
@@ -15,7 +14,7 @@ galleryItems.forEach(item => {
     />
   </a>
 </div>`
-});
+).join('');
 
 galleryEl.insertAdjacentHTML("afterbegin", galleryItemsString);
 
