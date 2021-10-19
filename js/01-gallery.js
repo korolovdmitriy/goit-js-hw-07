@@ -31,8 +31,6 @@ function onGalleryClick(event) {
   onShow: (instance) => {
     window.addEventListener("keydown", onKeyboardClick);
     function onKeyboardClick(event) {
-      console.log(event.code);
-
       if (event.code === 'Escape') { 
           instance.close();
           window.removeEventListener('keydown', onKeyboardClick);
